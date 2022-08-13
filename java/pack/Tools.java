@@ -2,7 +2,7 @@ package pack;
 
 public class Tools {
 
-    public static void printList (int[] A) {
+    public static void printList (int[] A, String end) {
 
         System.out.print("[");
 
@@ -14,7 +14,7 @@ public class Tools {
                 System.out.print(", " + A[i]);
             }
         }
-        System.out.println("]");
-
+        System.out.print("]");
+        System.out.print(end);
     }
 } 
