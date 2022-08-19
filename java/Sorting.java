@@ -1,5 +1,5 @@
 package sorting;
-import pack.Tools;
+import utils.Utils;
 
 public class Sorting {
 
@@ -21,29 +21,25 @@ public class Sorting {
     public static void insertionSortWorkFlow (int[] A) {
 
         int key;
-        System.out.println("Insertion sort work flow: ");
-        System.out.print ("\nUnsorted list: ");
-        Tools.printList (A, "\n");
+        System.out.println("Insertion sort work flow: "); // Title
         
         for (int i = 1; i < A.length; i ++) {
             key = A[i];
             int j = i - 1;
 
-            System.out.println("\nCycle i: " + i);
-            System.out.println("key: " + key);
-            Tools.printList (A, " - key at index " + i + " ?\n");
+            System.out.println("\nCycle " + i); // Cycle number
+            System.out.println("key " + key + " at index " + i); // Selecting key
+            Utils.printList (A, " - key at index " + i + " ?\n"); // Before it loops
 
             while (j >= 0 && key < A[j]) {
                 A[j + 1] = A[j];
                 j --;
 
-                A[j + 1] = key; // Not necessary, but to watch how it works
-                Tools.printList (A, " - key at index " + (j + 1) + " ?\n");
+                A[j + 1] = key; // Not original
+                Utils.printList (A, " - key at index " + (j + 1) + " ?\n"); // While it looping
             }
             // A[j + 1] = key; // Original
         }
-        System.out.print ("\nSorted list: ");
-        Tools.printList (A, "\n");
     }
 
     public static void bubbleSort () {

@@ -1,5 +1,5 @@
 package main;
-import pack.Tools;
+import utils.Utils;
 import sorting.Sorting;
 
 

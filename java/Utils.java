@@ -1,6 +1,6 @@
-package pack;
+package utils;
 
-public class Tools {
+public class Utils {
 
     public static void printList (int[] A, String end) {
 
@@ -17,4 +17,4 @@ public class Tools {
         System.out.print("]");
         System.out.print(end);
     }
-} 
+}
