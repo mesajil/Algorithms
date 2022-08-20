@@ -1,7 +1,7 @@
-package sorting;
+package algorithms;
 import utils.Utils;
 
-public class Sorting {
+public class Algorithms {
 
     public static void insertionSort (int[] A) {
 
@@ -63,6 +63,15 @@ public class Sorting {
             System.out.print(e + ", ");
         }
         System.out.println();
+    }
+
+    public static int linearSearch(int[] A, int x) {
+        
+        for (int i = 0; i < A.length; i ++) {
+            if (A[i] == x)
+                return i;
+        }
+        return -1;
     }
 
 }
