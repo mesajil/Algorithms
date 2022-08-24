@@ -35,40 +35,67 @@ public class Algorithms {
                 A[j + 1] = A[j];
                 j --;
 
-                A[j + 1] = key; // Not original
+                A[j + 1] = key; // How it works while looping
                 Utils.printList (A, " - key at index " + (j + 1) + " ?\n"); // While it looping
             }
-            // A[j + 1] = key; // Original
+            // A[j + 1] = key; // Original place
         }
     }
 
-    public static void bubbleSort () {
+    public static void bubbleSort (int[] A) {
 
-        int key, temp;
-        int[] A = {2,3,5,1,4,0};
+        int temp, counter;
 
-        System.out.print("Bubble sort: ");
+        for (int i = 0; i < A.length - 1; i ++) {
 
-        for (int i = 0; i < A.length; i ++) {
+            counter = 0; // Reset counter of swaps.
+            
             for (int j = 0; j < A.length - i - 1; j ++) {
                 if (A[j] > A[j + 1]) {
                     temp = A[j];
                     A[j] = A[j + 1];
                     A[j + 1] = temp;
+                    counter ++;
                 }
             }
+            if (counter == 0) break;
         }
-    
-        for (int e: A) {
-            System.out.print(e + ", ");
+    }
+    public static void bubbleSortWorkFlow (int[] A) {
+
+        int temp, counter;
+
+        for (int i = 0; i < A.length - 1; i ++) {
+
+            System.out.println("\nCycle i = " + i); // Cycle number
+            System.out.print("Initial: "); // Cycle number
+            Utils.printList (A, "\n");
+
+            counter = 0; // Reset counter of swaps.
+
+            for (int j = 0; j < A.length - i - 1; j ++) {
+                
+                System.out.println("\n-> j = " + j); // Cycle number
+                
+                if (A[j] > A[j + 1]) {
+                    temp = A[j];
+                    A[j] = A[j + 1];
+                    A[j + 1] = temp;
+                    counter ++;
+
+                    System.out.println(" Swapping " + A[j + 1] + " and " + A[j]);
+                    Utils.printList (A, "\n");
+                }
+            }
+            System.out.println("\nIt got " + counter + " swaps.");
+            if (counter == 0) break;
         }
-        System.out.println();
     }
 
-    public static int linearSearch(int[] A, int x) {
+    public static int linearSearch(int[] A, int key) {
         
         for (int i = 0; i < A.length; i ++) {
-            if (A[i] == x)
+            if (A[i] == key)
                 return i;
         }
         return -1;
