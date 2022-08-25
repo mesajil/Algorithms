@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner (System.in);
         int[] A = {1, 5, 2, 7, 99, 0, -5, 66, 4};
 
-        Algorithms.bubbleSort(A);
+        Algorithms.selectionSort(A);
         System.out.print("List: ");
         Utils.printList (A, "\n");
         

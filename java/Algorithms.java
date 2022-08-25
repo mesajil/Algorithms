@@ -92,6 +92,25 @@ public class Algorithms {
         }
     }
 
+    public static void selectionSort (int[] A) {
+
+        int min, temp;
+
+        for (int i = 0; i < A.length - 1; i ++) {
+            min = i;
+            for (int j = i + 1; j < A.length; j ++) {
+                if (A[j] < A[min]) {
+                    min = j;
+                }
+            }
+            if (i != min) { // Optimized
+                temp = A[i];
+                A[i] = A[min];
+                A[min] = temp;
+            }
+        }
+    }
+
     public static int linearSearch(int[] A, int key) {
         
         for (int i = 0; i < A.length; i ++) {
