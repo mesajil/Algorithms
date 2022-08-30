@@ -15,7 +15,7 @@ public class Main {
         
         System.out.print("Ingrese elemento a buscar: ");
         int key = sc.nextInt();
-        System.out.println("Index: " + Algorithms.linearSearch(A, key));
+        System.out.println("Index: " + Algorithms.binarySearch(A, key, 0, A.length - 1));
 
     }
 }

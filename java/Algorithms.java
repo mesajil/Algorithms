@@ -120,4 +120,20 @@ public class Algorithms {
         return -1;
     }
 
+    public static int binarySearch (int[] A, int key, int min, int max) {
+        
+        if (min > max) return -1;
+
+        int midpoint = (int) (min + max) / 2; 
+
+        if (key == A[midpoint]) {
+            return midpoint;
+        }
+        else if (key > A[midpoint]) {
+            return binarySearch (A, key, midpoint + 1, max);
+        }
+        else {
+            return binarySearch (A, key, min, midpoint - 1);
+        }
+    }
 }
